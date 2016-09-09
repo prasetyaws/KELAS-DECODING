@@ -76,6 +76,56 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    private boolean isValid() {
+
+        boolean valid = true;
+
+        String email = mail.getText().toString();
+        String password = pass.getText().toString();
+        String nama = Edit1.getText().toString();
+
+        if(nama.isEmpty())
+        {
+            Edit1.setError("Nama Belum Diisi");
+            valid = false;
+        }
+        else if(nama.length()<8)
+        {
+            Edit1.setError("Minimal 8 Karakter");
+            valid = false;
+        }
+        else
+        {
+            Edit1.setError(null);
+        }
+        if(email.isEmpty())
+        {
+            mail.setError("ID Belum Diisi");
+            valid = false;
+        }
+        else if(email.length()<4)
+        {
+            mail.setError("Minimal 4 Karakter");
+            valid = false;
+        }
+        else
+        {
+            Edit1.setError(null);
+        }
+        if(password.isEmpty())
+        {
+            pass.setError("Password Belum Diisi");
+            valid = false;
+        }
+        else if(password.length()<8)
+        {
+            pass.setError("Password Kurang Kuat (minim 8 character)");
+            valid = false;
+        }
+
+
+        return valid;
+    }
 
 
 
